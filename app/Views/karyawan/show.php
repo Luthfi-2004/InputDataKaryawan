@@ -83,6 +83,9 @@
                         <div>
                             <a href="/karyawan/edit/<?= $karyawan['id'] ?>" class="btn btn-warning">Edit</a>
                             <a href="/karyawan" class="btn btn-secondary">Kembali</a>
+                            <button type="button" class="btn btn-danger" onclick="showDeleteConfirm('<?= $karyawan['nama'] ?>', '<?= $karyawan['id'] ?>')">
+                                <i class="fas fa-trash"></i> Hapus
+                            </button>
                         </div>
                     </div>
                     <div class="card-body">
@@ -176,22 +179,7 @@
                         </div>
                         
                         <!-- Action Buttons -->
-                        <div class="row mt-4">
-                            <div class="col-12">
-                                <div class="d-flex justify-content-between">
-                                    <div>
-                                        <a href="/karyawan/edit/<?= $karyawan['id'] ?>" class="btn btn-warning">
-                                            <i class="fas fa-edit"></i> Edit
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <button type="button" class="btn btn-danger" onclick="showDeleteConfirm('<?= $karyawan['nama'] ?>', '<?= $karyawan['id'] ?>')">
-                                            <i class="fas fa-trash"></i> Hapus
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                
                     </div>
                 </div>
             </div>

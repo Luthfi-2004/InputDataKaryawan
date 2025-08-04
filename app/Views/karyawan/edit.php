@@ -3,6 +3,29 @@
 ?>
 <?= $this->include('layout/header') ?>
 
+<!-- Tampilkan error jika ada -->
+<?php if (session()->getFlashdata('errors')): ?>
+    <div class="alert alert-danger">
+        <ul class="mb-0">
+            <?php foreach (session()->getFlashdata('errors') as $error): ?>
+                <li><?= $error ?></li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php endif; ?>
+
+<?php if (session()->getFlashdata('error')): ?>
+    <div class="alert alert-danger">
+        <?= session()->getFlashdata('error') ?>
+    </div>
+<?php endif; ?>
+
+<?php if (session()->getFlashdata('success')): ?>
+    <div class="alert alert-success">
+        <?= session()->getFlashdata('success') ?>
+    </div>
+<?php endif; ?>
+
 <div class="card shadow">
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">Edit Karyawan</h6>
@@ -118,5 +141,21 @@
         </form>
     </div>
 </div>
+
+<script>
+function previewImage(input) {
+    const preview = document.getElementById('imagePreview');
+    const file = input.files[0];
+    
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            preview.src = e.target.result;
+            preview.style.display = 'block';
+        }
+        reader.readAsDataURL(file);
+    }
+}
+</script>
 
 <?= $this->include('layout/footer') ?>
