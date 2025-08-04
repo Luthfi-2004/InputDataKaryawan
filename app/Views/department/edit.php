@@ -41,7 +41,7 @@
                     <i class="fas fa-arrow-left me-1"></i>Kembali
                 </a>
                 <button type="submit" class="btn btn-primary">
-                    <i class="fas fa-save me-1"></i>Update
+                    <i class="fas fa-save me-1"></i>Updatee
                 </button>
             </div>
         </form>
